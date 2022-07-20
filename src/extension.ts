@@ -1,6 +1,5 @@
 'use strict';
-import { commands, ExtensionContext, workspace, languages, CodeActionProvider, TextDocument, CodeAction,
-WorkspaceEdit} from 'vscode';
+import { commands, ExtensionContext, workspace } from 'vscode';
 import { groupImports } from './group';
 
 export function activate(context: ExtensionContext) {

@@ -1,6 +1,8 @@
 import { Range, window, workspace, WorkspaceEdit, TextDocument, Disposable, ExtensionContext } from 'vscode';
 import { resolveRootPackage, getImportsRange, getImports } from './utils';
 
+let oldText: string;
+
 export const groupImports = async () => {
   const editor = window.activeTextEditor;
   let document: TextDocument;
@@ -15,6 +17,10 @@ export const groupImports = async () => {
   const documentText = document.getText();
   if (documentText === undefined) {
     return ;
+  } else if (documentText === oldText) {
+    return ;
+  } else {
+    oldText = documentText;
   }
 
   if (document.languageId !== 'go'){
@@ -48,7 +54,7 @@ export const groupImports = async () => {
   );
 
   edit.replace(document.uri, range, importGroupsToString(groupedList, <number>getModeSetting()));
-  workspace.applyEdit(edit).then();
+  workspace.applyEdit(edit).then(document.save);
 };
 
 type ImportGroups = {
@@ -104,7 +110,6 @@ export function checkDuplicate(data: string[], target: string): boolean {
 
 // generate import string
 const importGroupsToString = (importGroups: ImportGroups, mode: number): string => {
-  console.log(mode);
   switch (mode) {
     case 1: {
       const importString: string[] = new Array();
