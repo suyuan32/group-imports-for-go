@@ -26,11 +26,6 @@
     "configuration": {
       "title": "Group Imports for Go configuration",
       "properties": {
-        "groupImportsForGo.onSave": {
-          "type": "boolean",
-          "default": true,
-          "description": "Automatically group imports on save."
-        },
         "groupImportsForGo.Mode": {
           "type": "number",
           "default": 1,

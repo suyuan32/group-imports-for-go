@@ -1,4 +1,4 @@
-import { Range, window, workspace, WorkspaceEdit, TextDocument, Disposable } from 'vscode';
+import { Range, window, workspace, WorkspaceEdit, TextDocument, Disposable, ExtensionContext } from 'vscode';
 import { resolveRootPackage, getImportsRange, getImports } from './utils';
 
 export const groupImports = async () => {
@@ -48,7 +48,7 @@ export const groupImports = async () => {
   );
 
   edit.replace(document.uri, range, importGroupsToString(groupedList, <number>getModeSetting()));
-  workspace.applyEdit(edit).then(document.save);
+  workspace.applyEdit(edit).then();
 };
 
 type ImportGroups = {
@@ -132,27 +132,9 @@ const importGroupsToString = (importGroups: ImportGroups, mode: number): string 
 
 };
 
-// get onSave configuration
-export const getOnSaveSetting = () => {
-  return workspace.getConfiguration('groupImportsForGo').get('onSave');
-};
-
 // get Mode configuration
 export const getModeSetting = () => {
   return workspace.getConfiguration('groupImportsForGo').get('Mode');
-};
-
-let saveListener: Disposable;
-export const updateSaveListener = () => {
-  let saveStatus = <boolean>getOnSaveSetting();
-  if (saveStatus) {
-    saveListener = workspace.onWillSaveTextDocument(event => {
-      groupImports();
-      console.log("no");
-    });
-  } else {
-    saveListener.dispose();
-  }
 };
 
 

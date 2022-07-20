@@ -1,7 +1,7 @@
 'use strict';
 import { commands, ExtensionContext, workspace, languages, CodeActionProvider, TextDocument, CodeAction,
 WorkspaceEdit} from 'vscode';
-import { groupImports, updateSaveListener } from './group';
+import { groupImports } from './group';
 
 export function activate(context: ExtensionContext) {
   // register command
@@ -9,8 +9,8 @@ export function activate(context: ExtensionContext) {
     'extension.GroupImportsForGo',
     groupImports
   ));
-  
-  workspace.onDidChangeConfiguration(updateSaveListener);
+
+  context.subscriptions.push(workspace.onWillSaveTextDocument(groupImports));
 }
 
 export function deactivate() {}

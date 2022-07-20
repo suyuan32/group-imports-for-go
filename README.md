@@ -14,8 +14,6 @@
 vscode 1.69 +
 ## Extension Settings
 
-
-* `groupImportsForGo.onSave`: enable/disable auto group when saving 启用保存时自动排序
 * `groupImportsForGo.Mode`: sort mode 排序模式
 
 
