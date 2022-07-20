@@ -4,6 +4,7 @@
   "description": "group imports for go",
   "version": "1.0.0",
   "author": "Ryan Su",
+  "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -65,5 +66,10 @@
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suyuan32/group-imports-for-go.git"
+  },
+  "homepage": "https://github.com/suyuan32/group-imports-for-go/blob/main/README.md"
 }
