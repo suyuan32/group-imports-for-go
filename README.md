@@ -25,4 +25,5 @@ vscode 1.69 +
 
 Initial release of the extension
 
-## Following extension guidelines
+### Thanks
+Thanks for the codes from Go Group imports extensions.

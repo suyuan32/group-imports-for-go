@@ -7,9 +7,6 @@ export const groupImports = async () => {
   const editor = window.activeTextEditor;
   let document: TextDocument;
   if (editor === undefined) {
-    window.showErrorMessage(
-      'Failed to find active window.'
-    );
     return ;
   } else {
     document = editor.document;

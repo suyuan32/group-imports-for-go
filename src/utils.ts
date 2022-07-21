@@ -100,7 +100,7 @@ export type ImportsRange = {
 };
 
 export const getImportsRange = (documentText: string): ImportsRange => {
-  let start = 1; // lines in vs code are numereted from 1
+  let start = 1;
   for (var line of documentText.split('\n')) {
     if (line.includes('import (')) {
       break;
