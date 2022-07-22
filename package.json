@@ -2,6 +2,7 @@
   "name": "group-imports-for-go",
   "displayName": "Group Imports for Go",
   "description": "group imports for go",
+  "publisher": "RyanSu",
   "version": "1.0.0",
   "author": "Ryan Su",
   "icon": "assets/logo.png",
