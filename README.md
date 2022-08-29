@@ -25,5 +25,9 @@ vscode 1.69 +
 
 Initial release of the extension
 
+### 1.0.1
+
+fix: empty strings when one part of imports is empty
+
 ### Thanks
 Thanks for the codes from Go Group imports extensions.

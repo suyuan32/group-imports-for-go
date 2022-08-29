@@ -3,7 +3,7 @@
   "displayName": "Group Imports for Go",
   "description": "group imports for go",
   "publisher": "RyanSu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Ryan Su",
   "icon": "assets/logo.png",
   "engines": {

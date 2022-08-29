@@ -110,24 +110,42 @@ const importGroupsToString = (importGroups: ImportGroups, mode: number): string 
   switch (mode) {
     case 1: {
       const importString: string[] = new Array();
-      importString.push(importGroups.stdlib.join('\n'));
-      importString.push(importGroups.thirdParty.join('\n'));
-      importString.push(importGroups.own.join('\n'));
+      if(importGroups.stdlib.length > 0) {
+        importString.push(importGroups.stdlib.join('\n'));
+      }
+      if(importGroups.thirdParty.length > 0) {
+        importString.push(importGroups.thirdParty.join('\n'));
+      }
+      if(importGroups.own.length > 0) {
+        importString.push(importGroups.own.join('\n'));
+      }
       return importString.join('\n\n');
     }
     case 2: {
       const importString: string[] = new Array();
-      importString.push(importGroups.stdlib.join('\n'));
-      importString.push(importGroups.own.join('\n'));
-      importString.push(importGroups.thirdParty.join('\n'));
+      if(importGroups.stdlib.length > 0) {
+        importString.push(importGroups.stdlib.join('\n'));
+      }
+      if(importGroups.own.length > 0) {
+        importString.push(importGroups.own.join('\n'));
+      }
+      if(importGroups.thirdParty.length > 0) {
+        importString.push(importGroups.thirdParty.join('\n'));
+      }
       return importString.join('\n\n');
     
     }
     default: {
       const importString: string[] = new Array();
-      importString.push(importGroups.stdlib.join('\n'));
-      importString.push(importGroups.thirdParty.join('\n'));
-      importString.push(importGroups.own.join('\n'));
+      if(importGroups.stdlib.length > 0) {
+        importString.push(importGroups.stdlib.join('\n'));
+      }
+      if(importGroups.thirdParty.length > 0) {
+        importString.push(importGroups.thirdParty.join('\n'));
+      }
+      if(importGroups.own.length > 0) {
+        importString.push(importGroups.own.join('\n'));
+      }
       return importString.join('\n\n');
     }
   }
