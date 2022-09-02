@@ -4,7 +4,7 @@
 
 ## Features 功能
 
-- two mode for import groupping: 1: stdlib, 3rd party, own 2: stdlib, own, 3rd party
+- two modes for import grouping: 1: stdlib, 3rd party, own 2: stdlib, own, 3rd party
 - auto removing duplicate imports
 
 - 两种排序模式 1： 官方包， 三方包， 本地包 2：官方包，  本地包， 三方包
